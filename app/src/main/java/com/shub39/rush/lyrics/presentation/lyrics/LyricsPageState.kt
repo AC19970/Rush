@@ -2,11 +2,10 @@ package com.shub39.rush.lyrics.presentation.lyrics
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
+import com.shub39.rush.core.data.ExtractedColors
 import com.shub39.rush.lyrics.domain.LrcLibSong
 import com.shub39.rush.lyrics.domain.Lyric
 import com.shub39.rush.lyrics.domain.Song
-import com.shub39.rush.lyrics.domain.UILogic.breakLyrics
-import com.shub39.rush.lyrics.domain.UILogic.parseLyrics
 
 @Immutable
 data class LyricsPageState(
@@ -16,7 +15,8 @@ data class LyricsPageState(
     @StringRes val error: Int? = null,
     val autoChange: Boolean = false,
     val playingSong: PlayingSong = PlayingSong(),
-    val lrcCorrect: LrcCorrect = LrcCorrect()
+    val lrcCorrect: LrcCorrect = LrcCorrect(),
+    val extractedColors: ExtractedColors = ExtractedColors()
 )
 
 @Immutable
@@ -29,7 +29,7 @@ data class SongUi(
     val artUrl: String? = null,
     val lyrics:  List<Map.Entry<Int, String>> = emptyList(),
     val syncedLyrics: List<Lyric>? = null,
-    val geniusLyrics:  List<Map.Entry<Int, String>>? = null,
+    val geniusLyrics:  List<Map.Entry<Int, String>>? = null
 )
 
 data class PlayingSong(

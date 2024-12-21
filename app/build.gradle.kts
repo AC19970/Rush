@@ -16,8 +16,8 @@ android {
         applicationId = "com.shub39.rush"
         minSdk = 29
         targetSdk = 35
-        versionCode = 238
-        versionName = "2.3.8"
+        versionCode = 240
+        versionName = "2.4.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -74,7 +74,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -96,16 +95,8 @@ dependencies {
 
     implementation(libs.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
-    implementation(libs.retrofit)
-    implementation(libs.gson)
-    implementation(libs.converter.gson)
-    implementation(libs.okhttp)
-    implementation(libs.logging.interceptor)
     implementation(libs.landscapist.coil)
     implementation(libs.landscapist.placeholder)
-    implementation(libs.fuel)
-    implementation(libs.fuel.coroutines)
-    implementation(libs.jsoup)
 
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.room.compiler)
@@ -118,7 +109,9 @@ dependencies {
     implementation(libs.androidx.room.paging)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.colorpicker.compose)
+    implementation(libs.ksoup)
 
+    implementation(libs.bundles.ktor)
 }
 
 java {
