@@ -16,8 +16,8 @@ android {
         applicationId = "com.shub39.rush"
         minSdk = 29
         targetSdk = 35
-        versionCode = 242
-        versionName = "2.4.2"
+        versionCode = 2540
+        versionName = "2.5.4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -47,6 +47,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
         create("play") {
             resValue("string", "app_name", appName)
@@ -84,44 +85,29 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.palette)
     implementation(libs.koin.androidx.compose)
-
-    implementation(libs.navigation.compose)
+    implementation(libs.jetbrains.compose.navigation)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.landscapist.coil)
     implementation(libs.landscapist.placeholder)
-
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.room.compiler)
     ksp(libs.androidx.room.room.compiler)
-    implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.rxjava2)
-    implementation(libs.androidx.room.rxjava3)
-    implementation(libs.androidx.room.guava)
-    testImplementation(libs.androidx.room.testing)
-    implementation(libs.androidx.room.paging)
-    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore.preferences.core)
+    implementation(libs.sqlite.bundled)
     implementation(libs.colorpicker.compose)
     implementation(libs.ksoup)
-
+    implementation(libs.materialKolor)
     implementation(libs.bundles.ktor)
+    implementation(libs.hypnoticcanvas)
 }
 
 java {
